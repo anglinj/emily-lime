@@ -4,7 +4,7 @@ emily-lime
 Emily Lime typeface website
 
 # Emily Lime
-This is the code for emily-lime. Target version is Rails 4.0.0.
+This is the code for emily-lime. Target version is Rails 4.1.1.
 
 In the terminal, change to the directory where you want your development apps to be, e.g.:
 cd ~/Sites/
@@ -15,11 +15,11 @@ git clone git@github.com:anglinj/emily-lime.git
 ## cd into it
 cd emily-lime
 
-## use ruby 2.0.0
-rvm use 2.0.0@emily-lime --create
+## use ruby 2.1.0
+rvm use 2.1.0@emily-lime --create
 
 ## create .rvmrc and trust it
-echo 'rvm 2.0.0@emily-lime' > .rvmrc && rvm rvmrc trust
+echo 'rvm 2.1.0@emily-lime' > .rvmrc && rvm rvmrc trust
 
 ## run bundler
 bundle
@@ -40,3 +40,16 @@ EOF
 
 ## see if it works in a browser
 open http://emily-lime.dev/
+
+## or run in terminal
+rails server -p 3001
+
+## then open browser to 
+localhost:3001
+
+## active admin url
+localhost:3001/admin
+
+## active admin dev login
+admin@example.com
+password
