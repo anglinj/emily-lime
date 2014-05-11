@@ -1,14 +1,65 @@
 // import the CSS framework
 @import "foundation";
 
-// override for the 'Home' navigation link
-.top-bar .name {
-  font-size: rem-calc(13);
-  line-height: 45px; }
-.top-bar .name a {
-  font-weight: normal;
-  color: white;
-  padding: 0 15px; }
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+@mixin respond-min($width) {
+  @media screen and (min-width: $width) {
+      @content;
+  }
+}
+
+@mixin respond-max($width) {
+  @media screen and (max-width: $width - .0125) {
+      @content;
+  }
+}
+
+nav {
+  margin: 4em 0;
+  text-align: center;
+  position: relative;
+  ul {
+    li {
+      display: block;
+      padding: 2%;
+      vertical-align: middle;
+
+      @include respond-min(500px) {
+        display: inline-block;
+      }
+
+      &:nth-child(2) {
+        width: 60%;
+        margin: 0 auto;
+        @include respond-min(500px) {
+          width: 40%;
+        }
+      }
+      .logo {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        fill: #423c3c;
+      }
+      &:nth-child(odd) {
+        a {
+          text-decoration: none;
+          padding: 8px 16px;
+          border: 2px solid;
+          @include border-radius(4px);
+          color: #423c3c;
+        }
+      }
+    }
+  }
+}
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create mixins using Foundation classes
@@ -40,7 +91,6 @@
 // to make views framework-neutral
 main {
   @include twelve-columns;
-  background-color: #eee;
   }
 section {
   @extend .row;
