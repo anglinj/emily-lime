@@ -1,3 +1,52 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@mixin respond-min($width) {
+  @media screen and (min-width: $width) {
+      @content;
+  }
+}
+
+@mixin respond-max($width) {
+  @media screen and (max-width: $width - .0125) {
+      @content;
+  }
+}
+
+
+// Le Palette
+$offblack: #423c3c;
+$teal: #39e6f5;
+$peach: #f1ba91;
+$pink: #f4ab9a;
+$offwhite: #ffefe9;
+
+main { padding: 0px; }
+
+.font-list a {
+    display: block;
+    width: 80%;
+    margin-bottom: 3em;
+    padding: 25px 25px 70px 25px;
+    @include respond-min(500px) {
+        padding: 50px 50px 140px 50px;
+    }
+
+    &:nth-child(odd) {
+        float: left;
+
+        img {
+            float: right;
+        }
+    }
+
+    &:nth-child(even) {
+        float: right;
+    }
+
+    &.bombshell {
+        background-color: $teal;
+    }
+}
