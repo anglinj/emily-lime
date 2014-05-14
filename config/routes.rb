@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'typeface/index'
+
+  get 'contact/index'
+
+  get 'about/index'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
