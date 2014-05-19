@@ -23,30 +23,77 @@ $peach: #f1ba91;
 $pink: #f4ab9a;
 $offwhite: #ffefe9;
 
-main { padding: 0px; }
+// $colors: bombshell-pro $teal, carolyna-pro-black $peach;
+
+
+main {
+  padding: 5em 0em 0em;
+  margin-bottom: 5em;
+  background: url('dots.png') repeat-y center top;
+  background-size: 14px auto;
+}
+
+* {
+  transition: all 0.25s ease;
+}
 
 .font-list a {
     display: block;
-    width: 80%;
-    margin-bottom: 3em;
-    padding: 25px 25px 70px 25px;
+    text-align: center;
+    width: 90%;
+    margin-bottom: 12%;
+    padding: 70px 25px;
     @include respond-min(500px) {
-        padding: 50px 50px 140px 50px;
+        padding: 140px 50px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 640px;
     }
 
     &:nth-child(odd) {
         float: left;
+        border-radius: 0px 7px 0px 0px;
+        background-color: $teal;
+        border-bottom: 4px solid darken($teal,30%);
+        box-shadow: -15px 10px 0px 0px darken($teal,40%);
 
-        img {
-            float: right;
+        &:hover {
+          transform: translate(-1px, 4px);
+          box-shadow: -8px 5px 0px 0px darken($teal,40%);
         }
     }
 
     &:nth-child(even) {
         float: right;
+        border-radius: 7px 0px 0px 0px;
+        background-color: $peach;
+        border-bottom: 4px solid darken($peach,30%);
+        box-shadow: 15px 10px 0px 0px darken($peach,40%);
+
+        &:hover {
+          transform: translate(1px, 4px);
+          box-shadow: 8px 5px 0px 0px darken($peach,40%);
+        }
     }
 
-    &.bombshell {
-        background-color: $teal;
+    &:nth-last-child(1) {
+      margin-bottom: 0;
     }
+
+    // @each $color in $colors {
+    //     &.#{nth($color, 1)} {
+    //         background-color: nth($color, 2);
+    //         border-bottom: 4px solid darken(nth($color, 2),30%);
+    //         box-shadow: -15px 10px 0px 0px darken(nth($color, 2),40%);
+    //         border-left: 2px solid darken(nth($color, 2),30%);
+
+    //         &:hover {
+    //           transform: translate(-1px, 4px);
+    //           box-shadow: -8px 5px 0px 0px darken(nth($color, 2),40%);
+    //         }
+    //     }
+    // }
 }

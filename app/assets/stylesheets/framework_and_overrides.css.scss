@@ -22,13 +22,13 @@
 }
 
 nav {
-  margin: 4em 0;
+  margin: 4em 0em 0em;
   text-align: center;
   position: relative;
   ul {
     li {
       display: block;
-      padding: 2%;
+      padding: 0% 2%;
       vertical-align: middle;
 
       @include respond-min(500px) {
