@@ -37,6 +37,7 @@ main {
   transition: all 0.25s ease;
 }
 
+.font-list { overflow:hidden; }
 .font-list a {
     display: block;
     text-align: center;
@@ -80,7 +81,7 @@ main {
     }
 
     &:nth-last-child(1) {
-      margin-bottom: 0;
+      margin-bottom: 10px;
     }
 
     // @each $color in $colors {
