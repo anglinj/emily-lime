@@ -22,14 +22,18 @@
 }
 
 nav {
-  margin: 4em 0em 0em;
   text-align: center;
   position: relative;
+  margin: 4em 0em 0em;
   ul {
     li {
       display: block;
-      padding: 0% 2%;
       vertical-align: middle;
+      padding: 0% 2%;
+      margin: 2em 0;
+          @include respond-min(500px) {
+            margin: 0;
+          }
 
       @include respond-min(500px) {
         display: inline-block;
@@ -45,16 +49,31 @@ nav {
       .logo {
         width: 100%;
         height: auto;
-        max-width: 300px;
+        max-width: 420px;
         fill: #423c3c;
+      }
+      &:nth-child(1) {
+        display: none;
+        @include respond-min(500px) {
+          display:inline-block;
+        }
       }
       &:nth-child(odd) {
         a {
           text-decoration: none;
-          padding: 8px 16px;
-          border: 2px solid;
+          text-transform: uppercase;
+          font-weight: bold;
+          padding: 10px 34px;
+          border: 2px solid #423c3c;
           @include border-radius(4px);
           color: #423c3c;
+
+          &:hover {
+            background: #423c3c;
+            color: white;
+            border: 2px solid lighten(#423c3c,10%);
+
+          }
         }
       }
     }
