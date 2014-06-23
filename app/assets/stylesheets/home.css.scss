@@ -63,6 +63,7 @@ main {
 
         &:hover {
           transform: translate(-1px, 4px);
+          -webkit-transform: translate(-1px, 4px);
           box-shadow: -8px 5px 0px 0px darken($teal,40%);
         }
     }
@@ -76,6 +77,7 @@ main {
 
         &:hover {
           transform: translate(1px, 4px);
+          -webkit-transform: translate(1px, 4px);
           box-shadow: 8px 5px 0px 0px darken($peach,40%);
         }
     }
